@@ -1,0 +1,30 @@
+<html>
+    <script src="https://sandbox-lo1-developer-edition.cs94.force.com/lo1/lightning/lightning.out.js"></script>
+    <script>
+
+        const appName = 'c:LO1';
+        const componentName = 'c:lolwc';
+        const endpoint = 'https://sandbox-lo1-developer-edition.cs94.force.com/lo1';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const atts = {};
+
+        $Lightning.use(
+            appName,
+            function() {
+                $Lightning.createComponent(
+                   componentName,
+                   atts,
+                   targetElement,
+                   function(cmp) {
+                       console.log('callback...');
+                   }
+
+                );
+            },
+            endpoint
+        );
+    </script>
+
+    <div data-lightning-out="true"></div>
+
+</html>
